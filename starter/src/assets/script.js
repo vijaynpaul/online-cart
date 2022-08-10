@@ -47,7 +47,6 @@ function getProductForId(productId) {
     case 1003 : return strawberry;
       break;
     default :
-    console.log('Invalid productId');
   }
 }
 
@@ -135,9 +134,10 @@ function emptyCart() {
   - pay will return a negative number if there is a remaining balance
   - pay will return a positive number if money should be returned to customer
 */
-
+let totalPaid = 0;
 function pay(amount) {
-  return amount - cartTotal();
+  totalPaid += amount;
+  return totalPaid - cartTotal();
 }
 /* Place stand out suggestions here (stand out suggestions can be found at the bottom of the project rubric.)*/
 
